@@ -2,6 +2,8 @@
 
 Technical reference for developers who want to understand, modify, or rebuild the project
 
+![Tool](https://i.ibb.co/V0vBpPXK/image.png)
+
 ### Window Layout
 
 ```
