@@ -2,6 +2,21 @@
 
 Technical reference for developers who want to understand, modify, or rebuild the project
 
+### Window Layout
+
+```
++------------------------------------------+
+| BasicC2 - CodedByABOLHB          [_][X]  |
++------------------------------------------+
+| IP    | Host   | OS    | User   | UAC    |  <- ListView (hLV)
+|       |        |       |        |        |
+|       |        |       |        |        |
++------------------------------------------+
+| [Builder] [About]                        |  <- Button bar (BTN_BAR_H=28)
++------------------------------------------+
+| Listening :4444 | 505 client(s)          |  <- StatusBar (hSB)
++------------------------------------------+
+```
 ---
 
 ## Source Files
@@ -62,22 +77,6 @@ del BasicC2.obj
 start -> GetModuleHandle -> InitCommonControlsEx -> WSAStartup
       -> PortDlgProc (ask port) -> RegisterMainClass -> CreateMainWindow
       -> FireServer -> MsgPump (message loop)
-```
-
-### Window Layout
-
-```
-+------------------------------------------+
-| BasicC2 - CodedByABOLHB          [_][X]  |
-+------------------------------------------+
-| IP    | Host   | OS    | User   | UAC    |  <- ListView (hLV)
-|       |        |       |        |        |
-|       |        |       |        |        |
-+------------------------------------------+
-| [Builder] [About]                        |  <- Button bar (BTN_BAR_H=28)
-+------------------------------------------+
-| Listening :4444 | 2 client(s)            |  <- StatusBar (hSB)
-+------------------------------------------+
 ```
 
 ### Procedures
